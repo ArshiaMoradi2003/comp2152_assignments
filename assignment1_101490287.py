@@ -1,6 +1,6 @@
 # Author: Arshia Moradi
 # Assignment: #1
-from venv import create
+
 
 # Define variables for datatypes
 gym_member = "Alex Alliton"
@@ -19,3 +19,9 @@ for friend in list(workout_stats.keys()):
     workout_stats[f"{friend}_total"] = total_minutes
 # Create 2D list (nested list) from dictionary values
 workout_list = [list(minutes) for minutes in workout_stats.values() if isinstance(minutes, tuple)]
+# Extract and print yoga and running minutes for all friends
+yoga_running_minutes = [row[:2] for row in workout_list]
+print("Yoga and Running minutes for all friends:" , yoga_running_minutes)
+# Extract and print weightlifting minutes for the last two friends
+weightlifting_minutes = [row[2] for row in workout_list[-2:]]
+print("Weightlifting minutes for the last two friends:", weightlifting_minutes)
