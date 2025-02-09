@@ -34,3 +34,13 @@ print("Weightlifting minutes for the last two friends:", weightlifting_minutes)
 for friend, total in workout_stats.items():
     if isinstance(total, int) and total >= 120:
         print(f"Great job staying active, {friend}!")
+
+# Allow user to input a friend's name and display workout details
+friend_name = input("Enter a friend's name: ")
+if friend_name in workout_stats:
+    print(f"Workout details for {friend_name}: Yoga: {workout_stats[friend_name][0]} min, "
+          f"Running: {workout_stats[friend_name][1]} min, "
+          f"Weightlifting: {workout_stats[friend_name][2]} min, "
+          f"Total: {workout_stats[f'{friend_name}_Total']} min")
+else:
+    print(f"Friend {friend_name} not found in the records.")
